@@ -2,21 +2,22 @@
 
 # List of cards is at the bottom
 
+from cards.card import Card
+
 ##### Tier 1 Cards #####
 
 class Dash(Card):
 
-    def __init__(self, tier, instance, quantity):
+    def __init__(self, tier):
         self.gen_setup()
-        self.name = "({0}) Dash {1}/{2}".format(tier, instance, quantity)
+        self.name = "Dash"
+        self.nameplate = "({0}) {1}".format(tier, self.name)
         self.type = "V"
         self.printed_value = 3
         self.value = self.printed_value
         self.card_text = "AFTER COMBAT: Move your fighter up to 3 spaces."
         self.boost = 2
         self.tier = tier
-        self.instance = instance
-        self.quantity = quantity
 
     def ac(self):
         if self.tier == 1:
@@ -35,23 +36,24 @@ class Dash(Card):
 
     def def_tier2(self):
         self.tier = 2
-        self.name = "({0}) Dash {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 4
         self.card_text = "AFTER COMBAT: Move your fighter up to 4 spaces."
         self.boost = 3
         
     def def_tier3(self):
         self.tier = 3
-        self.name = "({0}) Dash {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 5
         self.card_text = "AFTER COMBAT: Move your fighter up to 5 spaces through opposing fighters."
         self.boost = 4
 
 class Feint(Card):
 
-    def __init__(self, tier, instance, quantity):
+    def __init__(self, tier):
         self.gen_setup()
-        self.name = "({0}) Feint {1}/{2}".format(tier, instance, quantity)
+        self.name = "Feint"
+        self.nameplate = "({0}) {1}".format(tier, self.name)
         self.type = "V"
         self.printed_value = 2
         self.value = self.printed_value
@@ -70,22 +72,23 @@ class Feint(Card):
 
     def def_tier2(self):
         self.tier = 2
-        self.name = "({0}) Feint {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 3
         self.card_text = "IMMEDIATELY: Cancel all effects on the opposing fighter's card."
         
     def def_tier3(self):
         self.tier = 3
-        self.name = "({0}) Feint {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 4
         self.card_text = "IMMEDIATELY: Cancel all effects on the opposing fighter's card. \nAFTERCOMBAT: Draw 1 card."
         self.boost = 2
 
 class Momentous_Shift(Card):
 
-    def __init__(self, tier, instance, quantity):
+    def __init__(self, tier):
         self.gen_setup()
-        self.name = "({0}) Momentous Shift {1}/{2}".format(tier, instance, quantity)
+        self.name = "Momentous Shift"
+        self.nameplate = "({0}) {1}".format(tier, self.name)
         self.type = "V"
         self.printed_value = 3
         self.value = self.printed_value
@@ -105,22 +108,23 @@ class Momentous_Shift(Card):
 
     def def_tier2(self):
         self.tier = 2
-        self.name = "({0}) Momentous Shift {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 4
         self.card_text = "DURING COMBAT: If your fighter started this turn on a different space, this card's value is a 6 instead"
         
     def def_tier3(self):
         self.tier = 3
-        self.name = "({0}) Momentous Shift {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}}".format(self.tier, self.name)
         self.printed_value = 5
         self.card_text = "DURING COMBAT: If your fighter started this turn on a different space, this card's value is a 8 instead"
         self.boost = 2
 
 class Regroup(Card):
     
-    def __init__(self, tier, instance, quantity):
+    def __init__(self, tier):
         self.gen_setup()
-        self.name = "({0}) Regroup {1}/{2}".format(tier, instance, quantity)
+        self.name = "Regroup"
+        self.nameplate = "({0}) {1}".format(tier, self.name)
         self.type = "V"
         self.printed_value = 1
         self.value = self.printed_value
@@ -143,23 +147,24 @@ class Regroup(Card):
 
     def def_tier2(self):
         self.tier = 2
-        self.name = "({0}) Regroup {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 2
         self.card_text = "AFTER COMBAT: Draw 2 cards. If you won the combat, draw 3 instead."
         self.boost = 4
         
     def def_tier3(self):
         self.tier = 3
-        self.name = "({0}) Regroup {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}}".format(self.tier, self.name)
         self.printed_value = 4
         self.card_text = "AFTER COMBAT: Draw up to 3 cards"
         self.boost = 5
 
 class Skirmish(Card):
     
-    def __init__(self, tier, instance, quantity):
+    def __init__(self, tier):
         self.gen_setup()
-        self.name = "({0}) Skirmish {1}/{2}".format(tier, instance, quantity)
+        self.name = "Skirmish"
+        self.nameplate = "({0}) {1}".format(tier, self.name)
         self.type = "V"
         self.printed_value = 4
         self.value = self.printed_value
@@ -182,13 +187,13 @@ class Skirmish(Card):
 
     def def_tier2(self):
         self.tier = 2
-        self.name = "({0}) Skirmish {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 5
         self.card_text = "AFTER COMBAT: If you won the combat, choose one of the fighters in the combat and move them up to 3 spaces."
         
     def def_tier3(self):
         self.tier = 3
-        self.name = "({0}) Skirmish {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 6
         self.card_text = "Move each of the fighters in the combat up to 3 spaces."
         self.boost = 2
@@ -197,9 +202,10 @@ class Skirmish(Card):
 
 class Super_Feint(Card):
 
-    def __init__(self, tier, instance, quantity):
+    def __init__(self, tier):
         self.gen_setup()
-        self.name = "({0}) Super Feint {1}/{2}".format(tier, instance, quantity)
+        self.name = "Super Feint"
+        self.nameplate = "({0}) {1}".format(tier, self.name)
         self.type = "V"
         self.printed_value = 4
         self.value = self.printed_value
@@ -219,13 +225,13 @@ class Super_Feint(Card):
 
     def def_tier2(self):
         self.tier = 2
-        self.name = "({0}) Super Feint {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 5
         self.card_text = "IMMEDIATELY: Cancel all effects on the opposing fighter's card. \nAFTERCOMBAT: Draw 2 cards."
         
     def def_tier3(self):
         self.tier = 3
-        self.name = "({0}) Super Feint {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 6
         self.card_text = "IMMEDIATELY: Cancel all effects on the opposing fighter's card. \nAFTERCOMBAT: Draw up to 2 cards."
         self.boost = 3
@@ -234,9 +240,10 @@ class Super_Feint(Card):
 
 class Ultimate_Feint(Card):
 
-    def __init__(self, tier, instance, quantity):
+    def __init__(self, tier):
         self.gen_setup()
-        self.name = "({0}) Ultimate Feint {1}/{2}".format(tier, instance, quantity)
+        self.name = "Ultimate Feint"
+        self.nameplate = "({0}) {1}".format(tier, self.name)
         self.type = "V"
         self.printed_value = 6
         self.value = self.printed_value
@@ -256,13 +263,13 @@ class Ultimate_Feint(Card):
 
     def def_tier2(self):
         self.tier = 2
-        self.name = "({0}) Feint {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 6
         self.card_text = "IMMEDIATELY: Cancel all effects on the opposing fighter's card. \nAFTER COMBAT: Draw 2 cards. If you were the defender, recover 2 health. If you were the attacker, gain 1 action."
         
     def def_tier3(self):
         self.tier = 3
-        self.name = "({0}) Feint {1}/{2}".format(self.tier, self.instance, self.quantity)
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         self.printed_value = 6
         self.card_text = "IMMEDIATELY: Cancel all effects on the opposing fighter's card. \nAFTER COMBAT: Draw up to 3 cards. If you were the defender, recover 3 health. If you were the attacker, gain 2 actions."
 

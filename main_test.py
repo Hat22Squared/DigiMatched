@@ -5,9 +5,10 @@ from fighters.fighter import Fighter
 import cards.card_library as cl
 from deck import Deck
 import random
+from main import *
 
 deck = Deck()
-while deck.size() < 9:
+while deck.size < 9:
     chosen_cards = []
     rarity_chooser = random.random()
     rare2_threshold = 0.8
@@ -29,4 +30,14 @@ while deck.size() < 9:
     tier2Add = 1 # sets tier of the card
     rarity2Add = 1 # sets the rarity of the cards to add
     for i in range(1,4): # adds 3 instances of each card
-       deck.add_card(toAddCard(tier=tier2Add, instance=i, quantity=3))
+       new_card = toAddCard(tier=tier2Add)
+       deck.add_card(new_card)
+    #    print(new_card.toString())
+
+print(deck.toString())
+
+card_names = deck.get_card_names()
+card_name = card_names[1]
+deck.upgrade_all_copies(card_name)
+
+print(deck.toString())

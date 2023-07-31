@@ -11,6 +11,7 @@ class Card():
     # All specific cards will call and then overwrite the
     # relevant parameters to minimize card updates
     def gen_setup(self):
+        # Tells which card it is
         self.name = "Title"
         # "V"-versatile, "A"-attack, "D"-defense, "S"-scheme
         self.type = "V" 
@@ -28,8 +29,12 @@ class Card():
         self.tier = 1
         # Maximum tier a card can be upgraded to
         self.max_tier = 3
+        # The name and details visible to the user
+        self.nameplate = "({0}) {1}".format(self.tier, self.name)
         # The effect text visible to the player
         self.card_text = "Blank Card Text"
+        # Number of copies of this card in the deck
+        self.num_in_deck = 1
         return
     
     # Function to trigger the card's immediately effects
@@ -88,3 +93,6 @@ class Card():
         else:
             # Signals failure to upgrade
             return 0
+        
+    def toString(self):
+        return self.nameplate

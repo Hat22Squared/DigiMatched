@@ -32,9 +32,23 @@ def combat(attacker: Tuple=None, defender: Tuple=None): # (Fighter, Card)
 
     hp_loss = attacker[1].value - defender[1].value
     if hp_loss > 0:
-        defender.hp = defender.hp - hp_loss
+        defender[0].hp = defender[0].hp - hp_loss
 
     defender[1].ac()
     attacker[1].ac()
+
+# Get the player input, forcing the return of an int.
+# The player will see the text entered as `player_text`
+def get_int_input(self, player_text):
+    notdigit = "That is not a valid input. Must give an int. Try again:"
+    player_input = input(player_text)
+    while player_input.isdigit() == False:
+        player_input = input(notdigit)
+    return int(player_input)
+
+
+
+    
+
 
 
